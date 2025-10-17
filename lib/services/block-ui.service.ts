@@ -57,7 +57,7 @@ export class BlockUIService {
   /**
   * Checks if BlockUI is actively blocking
   */
-  isActive(target: string | string[] = null): boolean {
+  isActive(target: string | string[] = []): boolean {
     const targets = target ? this.toArray(target) : null;
     const instances = this.blockUIInstance.blockUIInstances;
 
