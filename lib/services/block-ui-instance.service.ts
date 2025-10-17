@@ -53,7 +53,7 @@ export class BlockUIInstanceService {
   }
 
   private blockUIMiddleware({ action, name }: BlockUIEvent): void {
-    let isActive: boolean = null;
+    let isActive: boolean = false;
 
     switch (action) {
       case (BlockUIActions.START):
@@ -66,7 +66,7 @@ export class BlockUIInstanceService {
         break;
     }
 
-    if (isActive !== null) {
+    if (isActive !== false) {
       this.blockUIInstances[name].isActive = isActive;
     }
   }
